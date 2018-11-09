@@ -16,5 +16,5 @@
 \usetikzlibrary{trees}
 \usetikzlibrary{external}
 %\tikzexternalize[prefix=tikz/]
-\tikzexternalize[mode=list and make,prefix=tikz/]
+%\tikzexternalize[mode=list and make,prefix=tikz/]
 \tikzset{external/system call={lualatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"}}
