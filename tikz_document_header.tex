@@ -1,0 +1,42 @@
+
+\pgfplotsset
+{
+  GridStyle/.style =
+  {
+    xmajorgrids,
+    ymajorgrids,
+    y label style     = {yshift = 0.1cm},
+    scaled ticks      = false,
+    grid style        = {thick, dashed, black!15},
+  }
+}
+\pgfplotsset
+{
+  TicksStyle/.style =
+  {
+    ylabel absolute,
+    xticklabels             = \empty,
+    x tick style      = {thick},
+    y tick style      = {thick},
+  }
+}
+%
+\def\antenna#1#2#3{\begin{scope}[shift={#1}, rotate=#2, scale=#3]
+  \draw[line width=1.5,line cap=round] (0,0.03) -- (0,0.1);
+  \draw[line width=1,line cap=round] (0,0.1) -- (0,0.17);
+  \draw[line width=1,line cap=round] (0,0.1) -- (-0.05,0.15);
+  \draw[line width=1,line cap=round] (0,0.1) -- (0.05,0.15);
+\end{scope}}
+\def\ground2d#1#2#3#4{\begin{scope}[shift={#1}, rotate=#2, scale=#3]
+  \fill[black!8] (0.09,0) rectangle (#4 + 0.01, -0.06);
+  \foreach \n in {0.15, 0.2,...,#4}{
+    \draw[line width=0.2mm, color=black!50, line cap=round] (\n-0.05,0) -- (\n,-0.05);
+  }
+  \draw[line width=0.2mm, color=black!50, line cap=round] (#4 - 0.05,0) -- (#4,-0.05);
+  \draw[line width=0.5mm, line cap=round] (0.09,0) -- (#4 + 0.01,0);
+\end{scope}}
+%
+\input{../texenv/BlocksStyle}
+\input{../texenv/SumNodesStyle}
+\input{../texenv/HighlightingStyle}
+\input{../texenv/LinesStyle}

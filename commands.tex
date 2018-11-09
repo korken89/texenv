@@ -1,0 +1,31 @@
+
+% New commands
+\newtheorem{theorem}{Theorem}
+\newtheorem{assumption}{Assumption}
+\renewcommand\qedsymbol{$\blacksquare$}
+\newcommand{\placetheorem}[1]{\begin{theorem}#1\end{theorem}}
+\newcommand{\placeassumption}[1]{\begin{assumption}#1\end{assumption}}
+\newcommand{\placeproof}[1]{\begin{proof}[\bf Proof]#1\end{proof}}
+\newcommand{\ie}[0]{\emph{i.e.} }
+\newcommand{\rframe}[1]{\mathcal{#1}}
+
+% Define table colors
+\def\TablesRowsColor{black!8}
+\def\TablesColumnsColor{black!4}
+
+% Define table columns
+\newcolumntype
+{g}
+{
+	>{\centering \columncolor{\TablesColumnsColor} \arraybackslash}
+	p{0.15\textwidth}
+	<{}
+}
+
+\newcolumntype
+{w}
+{
+	>{\centering \arraybackslash}
+	p{0.15\textwidth}
+	<{}
+}
